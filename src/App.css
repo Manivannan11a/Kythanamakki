@@ -28,11 +28,71 @@
   color: #61dafb;
 }
 
+.cus-header1 {
+  background-color: #dd9933 !important;
+  padding: 10px 25px;
+}
+
+.cus-header2 {
+  background-color: #ffffff !important;
+  color: black !important;
+  margin-top: 44px !important;
+}
+
+.cu-ico svg {
+  width: 20px;
+  margin-right: 15px;
+}
+
+.alignemail {
+  font-size: 13px !important;
+  position: relative;
+  top: 4px;
+  left: 4px;
+}
+
+.setSizesvg {
+  width: 20px !important;
+}
+
+.alignwats {
+  font-size: 13px !important;
+  position: relative;
+  top: 4px;
+  left: 4px;
+}
+
+.setIcowidth {
+  width: 75px !important;
+}
+
+.setImg .mui-image-wrapper {
+  justify-content: start !important;
+}
+
+.hearext {
+  margin-top: 4px !important;
+  font-family: fangsong !important;
+  padding-left: 0px  !important;
+  margin-left: -19px  !important;
+  font-size: 20px !important;
+}
+
+.menu-data{
+  float: right !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .setImg .mui-image-wrapper {
+    justify-content: center !important;
   }
 }
