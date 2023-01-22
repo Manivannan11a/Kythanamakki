@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Layout from './component/layout';
+import AppLayout from './component/layout';
 import React, { Suspense } from 'react';
 
 const SamplePage = React.lazy(() => import('./component/sample-page'));
@@ -15,12 +14,12 @@ const Loading = ({ children }) => (
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
+      <AppLayout>
         <Routes>
-          <Route path="/app" element={<Loading><SamplePage /></Loading>} />
-          <Route path="*" element={<Loading><h1>Not Found</h1></Loading>} />
+          <Route path="*" element={<Loading><SamplePage /></Loading>} />
+          {/* <Route path="*" element={<Loading><h1>Not Found</h1></Loading>} /> */}
         </Routes>
-      </Layout>
+      </AppLayout>
     </BrowserRouter>
   );
 }

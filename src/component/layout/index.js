@@ -1,17 +1,33 @@
-import { Box } from "@mui/material";
-import Header from "./Header";
-import Footer from "./Footer";
+import { Layout, theme } from "antd";
+import AppFooter from "./appfooter";
+import AppHeader from "./appheader";
+import "./layout.scss";
+const { Header, Content, Footer } = Layout;
 
-const Layout = ({ children }) => {
+const AppLayout = ({ children }) => {
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
   return (
     <>
-      <Header />
-      {/* <Box component="main" sx={{ p: 3 }}>
-        {children}
-      </Box>
-      <Footer /> */}
+      <Layout className="k-layout">
+        <Header
+          style={{
+            position: "sticky",
+            top: 0,
+            zIndex: 1,
+            width: "100%",
+          }}
+        >
+          <AppHeader />
+        </Header>
+        <Content>{children}</Content>
+        <Footer className="k-parentfooter">
+          <AppFooter />
+        </Footer>
+      </Layout>
     </>
   );
 };
 
-export default Layout;
+export default AppLayout;
