@@ -2,6 +2,7 @@ import { Row, Col, Menu, Image, Typography, Button } from "antd";
 import logo from "../../images/logo.png";
 import { useState } from "react";
 import { PhoneOutlined  } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const { Text } = Typography;
 
@@ -9,10 +10,12 @@ const items = [
   {
     label: "Home",
     key: "home",
+    link: "/"
   },
   {
     label: "Cabins",
     key: "cabin",
+    link: "/cabin"
   },
   {
     label: "Adventures",
@@ -29,9 +32,13 @@ const items = [
 ];
 const AppHeader = () => {
   const [current, setCurrent] = useState("home");
+  const navigate = useNavigate();
   const onClick = (e) => {
-    console.log("click ", e);
+    // console.log("click ", e);
     setCurrent(e.key);
+    // console.log(e.key, "e.key");
+    navigate(e.key)
+
   };
   return (
     <Row>
