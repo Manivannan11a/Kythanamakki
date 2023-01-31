@@ -1,8 +1,13 @@
 import { Button, Carousel, Col, Image, Row, Typography } from "antd";
-import slider1 from "../../images/carousel1.jpg";
-import slider2 from "../../images/carousel2.jpeg";
+import slider1 from "../../images/Slider1.JPG";
+import slider2 from "../../images/Slider2.jpg";
+import slider3 from "../../images/Slider3.jpg";
+import slider4 from "../../images/Slider4.jpg";
+import slider5 from "../../images/Slider5.jpg";
+import slider6 from "../../images/Slider6.jpg";
 import seperator from "../../images/seperator.png";
 import pack from "../../images/pack.jpg";
+import experience from "../../images/expeirence.jpg";
 
 const { Text } = Typography;
 
@@ -10,13 +15,25 @@ const SamplePage = () => {
   return (
     <Row>
       <Col span={24}>
-        <Carousel effect="fade" dotPosition="right">
+        <Carousel effect="fade">
           <div>
-            <Image src={slider1} preview={false} width="100%" />
+            <Image src={slider1} preview={false} width="100%" height={600} />
           </div>
           <div>
-            <Image src={slider2} preview={false} width="100%" />
+            <Image src={slider2} preview={false} width="100%" height={600} />
+          </div>  
+          <div>
+            <Image src={slider5} preview={false} width="100%" height={600} />
           </div>
+          <div>
+            <Image src={slider4} preview={false} width="100%" height={600} />
+          </div>
+          <div>
+            <Image src={slider3} preview={false} width="100%" height={600} />
+          </div>
+          <div>
+            <Image src={slider6} preview={false} width="100%" height={600} />
+          </div>  
         </Carousel>
       </Col>
       <Col span={24} className="k-seperatortop">
@@ -72,7 +89,7 @@ const SamplePage = () => {
       </Col>
 
       <Col span={12}>
-        <Image src={pack} height="500px" preview={false} />
+        <Image src={experience} width='100%' height="500px" preview={false} />
       </Col>
       <Col span={12} className="k-packdesc">
         <Text className="k-title">Experiences</Text>

@@ -1,0 +1,35 @@
+.v- {
+  &book {
+    padding: 30px;
+  }
+
+  &book .ant-card-head-title {
+    color: #ffffff;
+    font-size: 20px !important;
+  }
+
+  &book .ant-card-head {
+    background: #dd9933;
+  }
+
+  &book .ant-card-body {
+    padding: 10px 20px;
+  }
+
+  &charges {
+    margin-bottom: 10px;
+    display: inline-block;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  &book .ant-radio-wrapper .ant-radio-checked .ant-radio-inner{
+    border-color: #dd9933;
+    background-color: #dd9933;
+  }
+
+  &book .ant-radio-wrapper:hover .ant-radio-inner{
+    border-color: #dd9933 !important;
+  }
+}
