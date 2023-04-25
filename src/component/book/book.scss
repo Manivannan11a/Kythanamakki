@@ -24,12 +24,30 @@
     font-size: 14px;
   }
 
-  &book .ant-radio-wrapper .ant-radio-checked .ant-radio-inner{
+  &book .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
     border-color: #dd9933;
     background-color: #dd9933;
   }
 
-  &book .ant-radio-wrapper:hover .ant-radio-inner{
+  &book .ant-radio-wrapper:hover .ant-radio-inner {
     border-color: #dd9933 !important;
+  }
+
+  &info {
+    color: black;
+    font-size: 20px;
+    display: inline-block;
+    width: 742px;
+    margin: 30px 0px;
+    line-height: 35px;
+    font-weight: 600;
+  }
+
+  &book .ant-input, &book .ant-picker {
+    border-color: #dd9933 !important;
+  }
+
+  &bnt-s{
+    background: #dd9933 !important;
   }
 }

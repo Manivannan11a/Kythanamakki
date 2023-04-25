@@ -14,7 +14,7 @@ const { Text } = Typography;
 const SamplePage = () => {
   return (
     <Row>
-      <Col span={24}>
+      <Col span={24} >
         <Carousel effect="fade">
           <div>
             <Image src={slider1} preview={false} width="100%" height={600} />
