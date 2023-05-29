@@ -7,8 +7,10 @@ import {
   Button,
   Input,
   DatePicker,
+  message,
 } from "antd";
 import { useState } from "react";
+import { insertBooking } from "../../api/req-api";
 import "./book.scss";
 
 const { Text } = Typography;
@@ -19,24 +21,59 @@ const Booknow = () => {
   const formItemLayout =
     formLayout === "horizontal"
       ? {
-          labelCol: {
-            span: 4,
-          },
-          wrapperCol: {
-            span: 14,
-          },
-        }
+        labelCol: {
+          span: 4,
+        },
+        wrapperCol: {
+          span: 14,
+        },
+      }
       : null;
 
   const buttonItemLayout =
     formLayout === "horizontal"
       ? {
-          wrapperCol: {
-            span: 14,
-            offset: 4,
-          },
-        }
+        wrapperCol: {
+          span: 14,
+          offset: 4,
+        },
+      }
       : null;
+
+
+  const onFinish = async (values) => {
+    console.log("submit", values);
+    const data = {
+      name: values.name,
+      phoneNumber: values.phone,
+      emailId: "user@gmail.com",
+      noOfPerson: parseInt(values.noofpersons),
+      packageId: "1",
+      packageName: "p1",
+      visitingDate: values.fromdate,
+      fromDate: values.fromdate,
+      endDate: values.enddate,
+      roomRequired: values.noofrooms,
+      noOfDays: values.noofdays,
+    }
+
+    const { data: response, status } = await insertBooking(data);
+    if (status === 200) {
+      message.success(response.message)
+      form.resetFields();
+    } else {
+      message.success("Somthing went wrong")
+    }
+
+    // console.log(res, "res");
+    // console.log(res, "res");
+    debugger;
+    // const prames = {
+
+    // }
+  }
+
+
   return (
     <div className="v-book">
       <Row gutter={16}>
@@ -79,7 +116,13 @@ const Booknow = () => {
           </Text>
         </Col>
         <Col span={24}>
-          <Form {...formItemLayout} layout={formLayout} form={form}>
+          <Form
+            form={form}
+            name="basic"
+            onFinish={onFinish}
+            // onFinishFailed={onFinishFailed}
+            autoComplete="off"
+          >
             <Form.Item
               label="Name"
               name="name"
@@ -115,7 +158,7 @@ const Booknow = () => {
               />
             </Form.Item>
             <Form.Item
-              name="From"
+              name="fromdate"
               label="From"
               rules={[
                 {
@@ -132,7 +175,7 @@ const Booknow = () => {
               />
             </Form.Item>
             <Form.Item
-              name="To"
+              name="enddate"
               label="To"
               rules={[
                 {
@@ -150,7 +193,7 @@ const Booknow = () => {
             </Form.Item>
 
             <Form.Item
-              name="no of days"
+              name="noofdays"
               label="No of Days"
               rules={[
                 {
@@ -166,7 +209,7 @@ const Booknow = () => {
             </Form.Item>
 
             <Form.Item
-              name="no of rooms "
+              name="noofrooms"
               label="Rooms Required"
               rules={[
                 {
@@ -182,7 +225,7 @@ const Booknow = () => {
             </Form.Item>
 
             <Form.Item
-              name="no of persons "
+              name="noofpersons"
               label="No of Persons"
               rules={[
                 {
@@ -198,7 +241,7 @@ const Booknow = () => {
             </Form.Item>
 
             <Form.Item {...buttonItemLayout}>
-              <Button className="v-bnt-s" type="primary">Submit</Button>
+              <Button className="v-bnt-s" type="primary" htmlType="submit">Submit</Button>
             </Form.Item>
           </Form>
         </Col>
