@@ -9,6 +9,7 @@ import {
   DatePicker,
   message,
 } from "antd";
+import moment from "moment";
 import { useState } from "react";
 import { insertBooking } from "../../api/req-api";
 import "./book.scss";
@@ -77,8 +78,8 @@ const Booknow = () => {
   return (
     <div className="v-book">
       <Row gutter={16}>
-        <Col span={12}>
-          <Card hoverable title="Home Stay">
+        <Col xs={24} sm={12}>
+          <Card hoverable title="Home Stay" style={{ marginBottom: "15px" }}>
             <Text className="v-charges">
               * Charges mentioned below apply per day only.
             </Text>
@@ -92,7 +93,7 @@ const Booknow = () => {
             </Row>
           </Card>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Card hoverable title="Tent Stay">
             <Text className="v-charges">
               * Charges mentioned below apply per day only.
@@ -109,141 +110,160 @@ const Booknow = () => {
         </Col>
       </Row>
       <Row>
-        <Col span={24} align="middle">
+        <Col xs={24} align="middle">
           <Text className="v-info">
             Really curious about Kyathanamakki Home Stay? Great, fill out below enquiry form and
             we will get back to you as soon as possible.
           </Text>
         </Col>
-        <Col span={24}>
-          <Form
-            form={form}
-            name="basic"
-            onFinish={onFinish}
-            // onFinishFailed={onFinishFailed}
-            autoComplete="off"
-          >
-            <Form.Item
-              label="Name"
-              name="name"
-              rules={[
-                {
-                  required: true,
-                  message: "Please enter your name!",
-                },
-              ]}
+        <Col hidden="xs" sm={7}></Col>
+        <Col sm={24} lg={10}>
+          <Card style={{ padding: "15px" }}>
+            <Form
+              form={form}
+              name="basic"
+              onFinish={onFinish}
+              // onFinishFailed={onFinishFailed}
+              autoComplete="off"
             >
-              <Input
-                style={{
-                  width: "80%",
-                }}
-                placeholder="Enter your name"
-              />
-            </Form.Item>
-            <Form.Item
-              name="phone"
-              label="Phone Number"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your phone number!",
-                },
-              ]}
-            >
-              <Input
-                placeholder="Enter Phone number"
-                style={{
-                  width: "80%",
-                }}
-              />
-            </Form.Item>
-            <Form.Item
-              name="fromdate"
-              label="From"
-              rules={[
-                {
-                  required: true,
-                  message: "Enter from Date",
-                },
-              ]}
-            >
-              <DatePicker
-                showTime={{
-                  format: "HH:mm A",
-                  use12Hours: true,
-                }}
-              />
-            </Form.Item>
-            <Form.Item
-              name="enddate"
-              label="To"
-              rules={[
-                {
-                  required: true,
-                  message: "Enter to Date",
-                },
-              ]}
-            >
-              <DatePicker
-                showTime={{
-                  format: "HH:mm A",
-                  use12Hours: true,
-                }}
-              />
-            </Form.Item>
+              <Form.Item
+                label="Name"
+                name="name"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter your name!",
+                  },
+                ]}
+              >
+                <Input
+                  style={{
+                    width: "100%",
+                  }}
+                  placeholder="Enter your name"
+                />
+              </Form.Item>
+              <Form.Item
+                name="phone"
+                label="Phone Number"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your phone number!",
+                  },
+                ]}
+              >
+                <Input
+                  placeholder="Enter Phone number"
+                  style={{
+                    width: "100%",
+                  }}
+                />
+              </Form.Item>
+              <Form.Item
+                name="fromdate"
+                label="From"
+                rules={[
+                  {
+                    required: true,
+                    message: "Enter from Date",
+                  },
+                ]}
+              >
+                <DatePicker
+                  showTime={{
+                    format: "HH:mm A",
+                    use12Hours: true,
 
-            <Form.Item
-              name="noofdays"
-              label="No of Days"
-              rules={[
-                {
-                  required: true,
-                },
-              ]}
-            >
-              <Input
-                style={{
-                  width: "80%",
-                }}
-              />
-            </Form.Item>
+                  }}
+                  disabledDate={(current) => {
+                    let customDate = moment().format("YYYY-MM-DD");
+                    return current && current < moment(customDate, "YYYY-MM-DD");
+                  }}
+                  style={{
+                    width: "100%",
+                  }}
+                />
+              </Form.Item>
+              <Form.Item
+                name="enddate"
+                label="To"
+                rules={[
+                  {
+                    required: true,
+                    message: "Enter to Date",
+                  },
+                ]}
+              >
+                <DatePicker
+                  showTime={{
+                    format: "HH:mm A",
+                    use12Hours: true,
+                  }}
+                  disabledDate={(current) => {
+                    debugger;
+                    let customDate = moment(form.getFieldValue('fromdate').toDate()).format("YYYY-MM-DD");
+                    return current && current < moment(customDate, "YYYY-MM-DD");
+                  }}
+                  style={{
+                    width: "100%",
+                  }}
+                />
+              </Form.Item>
 
-            <Form.Item
-              name="noofrooms"
-              label="Rooms Required"
-              rules={[
-                {
-                  required: true,
-                },
-              ]}
-            >
-              <Input
-                style={{
-                  width: "80%",
-                }}
-              />
-            </Form.Item>
+              <Form.Item
+                name="noofdays"
+                label="No of Days"
+                rules={[
+                  {
+                    required: true,
+                  },
+                ]}
+              >
+                <Input
+                  style={{
+                    width: "100%",
+                  }}
+                />
+              </Form.Item>
 
-            <Form.Item
-              name="noofpersons"
-              label="No of Persons"
-              rules={[
-                {
-                  required: true,
-                },
-              ]}
-            >
-              <Input
-                style={{
-                  width: "80%",
-                }}
-              />
-            </Form.Item>
+              <Form.Item
+                name="noofrooms"
+                label="Rooms Required"
+                rules={[
+                  {
+                    required: true,
+                  },
+                ]}
+              >
+                <Input
+                  style={{
+                    width: "100%",
+                  }}
+                />
+              </Form.Item>
 
-            <Form.Item {...buttonItemLayout}>
-              <Button className="v-bnt-s" type="primary" htmlType="submit">Submit</Button>
-            </Form.Item>
-          </Form>
+              <Form.Item
+                name="noofpersons"
+                label="No of Persons"
+                rules={[
+                  {
+                    required: true,
+                  },
+                ]}
+              >
+                <Input
+                  style={{
+                    width: "100%",
+                  }}
+                />
+              </Form.Item>
+
+              <Form.Item {...buttonItemLayout}>
+                <Button className="v-bnt-s" type="primary" htmlType="submit">Submit</Button>
+              </Form.Item>
+            </Form>
+          </Card>
         </Col>
       </Row>
     </div>

@@ -150,9 +150,9 @@
   }
 
   &menu {
-    justify-content: flex-end;
-    background: "#001529";
-    color: "#ffffff";
+    // justify-content: flex-end;
+    // background: "#001529";
+    // color: "#ffffff";
   }
 
   &menu .ant-menu-item-selected,
@@ -169,4 +169,8 @@
     border-width: 2px !important;
     border-bottom-color: orange !important;
   }
+}
+
+.ant-menu-inline.ant-menu-light {
+  border: none !important;
 }
