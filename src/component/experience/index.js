@@ -31,87 +31,87 @@ const { Title } = Typography;
 const ExperiencesComp = () => {
   return (
     <Row className="v-cabin">
-      <Col span={24}>
+      <Col xs={24} md={24}>
         <Typography className="v-head">Experiences </Typography>
         <hr className="v-hr"></hr>
         <Image.PreviewGroup>
           <Row>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp1} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp2} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp3} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp6} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp7} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp8} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp10} width={320} height={320} />
             </Col>
-        
-            <Col span={6}>
+
+            <Col xs={24} md={6}>
               <Image src={Exp12} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp13} width={320} height={320} />
             </Col>
 
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp14} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp15} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp16} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp17} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp18} width={320} height={320} />
             </Col>
-           
-            <Col span={6}>
+
+            <Col xs={24} md={6}>
               <Image src={Exp20} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp21} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp22} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp21} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp22} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp23} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp24} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp25} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp26} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp27} width={320} height={320} />
             </Col>
-            <Col span={6}>
+            <Col xs={24} md={6}>
               <Image src={Exp28} width={320} height={320} />
             </Col>
           </Row>

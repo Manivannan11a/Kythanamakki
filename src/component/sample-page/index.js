@@ -14,14 +14,14 @@ const { Text } = Typography;
 const SamplePage = () => {
   return (
     <Row>
-      <Col span={24} >
+      <Col xs={24} >
         <Carousel effect="fade">
           <div>
             <Image src={slider1} preview={false} width="100%" height={600} />
           </div>
           <div>
             <Image src={slider2} preview={false} width="100%" height={600} />
-          </div>  
+          </div>
           <div>
             <Image src={slider5} preview={false} width="100%" height={600} />
           </div>
@@ -33,13 +33,13 @@ const SamplePage = () => {
           </div>
           <div>
             <Image src={slider6} preview={false} width="100%" height={600} />
-          </div>  
+          </div>
         </Carousel>
       </Col>
-      <Col span={24} className="k-seperatortop">
+      <Col xs={24} className="k-seperatortop">
         <Image src={seperator} preview={false} />
       </Col>
-      <Col span={24} className="k-description">
+      <Col xs={24} className="k-description">
         <Text>
           Discover exquisite beauty at Kyathanamakki, the most luxurious and
           good-looking homestay in the kuderemukha. The property is dotted with
@@ -52,10 +52,10 @@ const SamplePage = () => {
         <Image src={seperator} preview={false} />
       </Col>
 
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Image src={pack} height="500px" preview={false} />
       </Col>
-      <Col span={12} className="k-packdesc">
+      <Col xs={24} sm={12} className="k-packdesc">
         <Text className="k-title">Packages</Text>
         <hr class="k-hr"></hr>
         <Text className="k-overalldesc">
@@ -70,7 +70,7 @@ const SamplePage = () => {
         </Button>
       </Col>
 
-      <Col span={12} className="k-packdesc">
+      <Col xs={24} sm={12} className="k-packdesc">
         <Text className="k-title">Adventures</Text>
         <hr class="k-hr"></hr>
         <Text className="k-overalldesc">
@@ -84,14 +84,14 @@ const SamplePage = () => {
           <Text className="k-explore-btn">Explore Our Adventures</Text>
         </Button>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Image src={pack} height="500px" preview={false} />
       </Col>
 
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Image src={experience} width='100%' height="500px" preview={false} />
       </Col>
-      <Col span={12} className="k-packdesc">
+      <Col xs={24} sm={12} className="k-packdesc">
         <Text className="k-title">Experiences</Text>
         <hr class="k-hr"></hr>
         <Text className="k-overalldesc">
