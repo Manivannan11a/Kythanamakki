@@ -55,3 +55,8 @@
     width: 130px !important;
   }
 }
+@media (max-width: 768px) {
+  .ant-picker-datetime-panel {
+    flex-direction: column !important;
+  }
+}

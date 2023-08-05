@@ -19,6 +19,7 @@ const { Text } = Typography;
 const Booknow = () => {
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("horizontal");
+  const [loading, setLoading] = useState(false);
   const formItemLayout =
     formLayout === "horizontal"
       ? {
@@ -57,18 +58,19 @@ const Booknow = () => {
       roomRequired: values.noofrooms,
       noOfDays: values.noofdays,
     }
-
+    setLoading(true);
     const { data: response, status } = await insertBooking(data);
     if (status === 200) {
       message.success(response.message)
       form.resetFields();
+      setLoading(false);
     } else {
+      setLoading(false);
       message.success("Somthing went wrong")
     }
 
     // console.log(res, "res");
     // console.log(res, "res");
-    debugger;
     // const prames = {
 
     // }
@@ -201,7 +203,6 @@ const Booknow = () => {
                     use12Hours: true,
                   }}
                   disabledDate={(current) => {
-                    debugger;
                     let customDate = moment(form.getFieldValue('fromdate').toDate()).format("YYYY-MM-DD");
                     return current && current < moment(customDate, "YYYY-MM-DD");
                   }}
@@ -260,7 +261,7 @@ const Booknow = () => {
               </Form.Item>
 
               <Form.Item {...buttonItemLayout}>
-                <Button className="v-bnt-s" type="primary" htmlType="submit">Submit</Button>
+                <Button disabled={loading} loading={loading} className="v-bnt-s" type="primary" htmlType="submit">Submit</Button>
               </Form.Item>
             </Form>
           </Card>
