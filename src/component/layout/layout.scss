@@ -174,3 +174,24 @@
 .ant-menu-inline.ant-menu-light {
   border: none !important;
 }
+.book-now {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .book-now {
+    display: block !important;
+    position: fixed;
+    z-index: 100000000;
+    bottom: 50px;
+    width: 350px;
+
+    button {
+      background-color: #dd9933 !important;
+      border-color: #dd9933 !important;
+      color: #ffffff !important;
+      font-weight: bold !important;
+      width: 200px;
+    }
+  }
+}

@@ -173,13 +173,13 @@ const Booknow = () => {
                 ]}
               >
                 <DatePicker
-                  showTime={{
-                    format: "HH:mm A",
-                    use12Hours: true,
+                  // showTime={{
+                  //   format: "HH:mm A",
+                  //   use12Hours: true,
 
-                  }}
+                  // }}
                   disabledDate={(current) => {
-                    let customDate = moment().format("YYYY-MM-DD");
+                    let customDate = moment()?.format("YYYY-MM-DD");
                     return current && current < moment(customDate, "YYYY-MM-DD");
                   }}
                   style={{
@@ -198,12 +198,12 @@ const Booknow = () => {
                 ]}
               >
                 <DatePicker
-                  showTime={{
-                    format: "HH:mm A",
-                    use12Hours: true,
-                  }}
+                  // showTime={{
+                  //   format: "HH:mm A",
+                  //   use12Hours: true,
+                  // }}
                   disabledDate={(current) => {
-                    let customDate = moment(form.getFieldValue('fromdate').toDate()).format("YYYY-MM-DD");
+                    let customDate = moment(form?.getFieldValue('fromdate')?.toDate())?.format("YYYY-MM-DD");
                     return current && current < moment(customDate, "YYYY-MM-DD");
                   }}
                   style={{
