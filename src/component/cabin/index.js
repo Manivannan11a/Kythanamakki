@@ -22,47 +22,54 @@ const { Title } = Typography;
 const CabinComponent = () => {
   return (
     <Row className="v-cabin">
-      <Col sm={24} md={21}>
+      <Col sm={24} xs={24}>
         <Typography className="v-head">Home Stay</Typography>
         <hr className="v-hr"></hr>
         <Image.PreviewGroup>
           <Row>
-            <Col sm={24} md={6}>
-              <Image src={Room1} width={280} height={280} />
+            <Col sm={24} md={6} xs={24}>
+              <Image src={Room1} width="100%" height={280} />
             </Col>
-            <Col sm={24} md={6}>
-              <Image src={Room2} width={280} height={280} />
+            <Col sm={24} md={6} xs={24}>
+              <Image src={Room2} width="100%" height={280} />
             </Col>
-            <Col sm={24} md={6}>
-              <Image src={Room3} width={280} height={280} />
+            <Col sm={24} md={6} xs={24}>
+              <Image src={Room3} width="100%" height={280} />
             </Col>
-            <Col sm={24} md={6}>
-              <Image src={Room4} width={280} height={280} />
+            <Col sm={24} md={6} xs={24}>
+              <Image src={Room4} width="100%" height={280} />
             </Col>
-            <Col sm={24} md={6}>
-              <Image src={Room5} width={280} height={280} />
+            <Col sm={24} md={6} xs={24}>
+              <Image src={Room5} width="100%" height={280} />
             </Col>
-            <Col sm={24} md={6}>
-              <Image src={Room6} width={280} height={280} />
+            <Col sm={24} md={6} xs={24}>
+              <Image src={Room6} width="100%" height={280} />
             </Col>
-            <Col sm={24} md={6}>
-              <Image src={Room7} width={280} height={280} />
+            <Col sm={24} md={6} xs={24}>
+              <Image src={Room7} width="100%" height={280} />
             </Col>
-            <Col sm={24} md={6}>
-              <Image src={Room8} width={280} height={280} />
-            </Col>
-
-            <Col sm={24} md={6}>
-              <Image src={Room9} width={280} height={280} />
+            <Col sm={24} md={6} xs={24}>
+              <Image src={Room8} width="100%" height={280} />
             </Col>
 
-            <Col sm={24} md={6}>
-              <Image src={Room10} width={280} height={280} />
+            <Col sm={24} md={6} xs={24}>
+              <Image src={Room9} width="100%" height={280} />
+            </Col>
+
+            <Col sm={24} md={6} xs={24}>
+              <Image src={Room10} width="100%" height={280} />
             </Col>
           </Row>
         </Image.PreviewGroup>
       </Col>
-      <Col sm={24} md={3}>
+      <Col sm={24} md={24}>
+        <Typography className="v-head v-head2">Tent Stay</Typography>
+        <hr className="v-hr v-hrstay"></hr>
+        <Image.PreviewGroup>
+          <Image src={Tent1} width="100%" height={500} />
+        </Image.PreviewGroup>
+      </Col>
+      <Col sm={24} xs={24}>
         <Typography className="v-head">Facilities</Typography>
         <hr className="v-hr v-hrfac"></hr>
         <Image src={breakfast} width={35} preview={false} />{" "}
@@ -89,14 +96,6 @@ const CabinComponent = () => {
         <Title className="v-factitle v-marginnew" level={5}>
           Fire Camp
         </Title>
-      </Col>
-
-      <Col sm={24} md={24}>
-        <Typography className="v-head v-head2">Tent Stay</Typography>
-        <hr className="v-hr v-hrstay"></hr>
-        <Image.PreviewGroup>
-          <Image src={Tent1} width={280} height={280} />
-        </Image.PreviewGroup>
       </Col>
     </Row>
   );

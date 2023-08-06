@@ -65,7 +65,7 @@ const SamplePage = () => {
           Kodava landscape. Or sink into a cloudlike bed and let the
           unadulterated sounds of nature take you to dreamland.
         </Text>
-        <Button size="large" className="k-explorebtn">
+        <Button type="link" href="/bookings" size="large" className="k-explorebtn">
           <Text className="k-explore-btn">Explore Packages</Text>
         </Button>
       </Col>
@@ -80,8 +80,8 @@ const SamplePage = () => {
           Kodava landscape. Or sink into a cloudlike bed and let the
           unadulterated sounds of nature take you to dreamland.
         </Text>
-        <Button size="large" className="k-explorebtn">
-          <Text className="k-explore-btn">Explore Our Adventures</Text>
+        <Button size="large" type="link" href="adventures" className="k-explorebtn">
+          <Text className="k-explore-btn">Our Adventures</Text>
         </Button>
       </Col>
       <Col xs={24} sm={12}>
@@ -101,7 +101,7 @@ const SamplePage = () => {
           Kodava landscape. Or sink into a cloudlike bed and let the
           unadulterated sounds of nature take you to dreamland.
         </Text>
-        <Button size="large" className="k-explorebtn">
+        <Button size="large" href="/experience" type="link" className="k-explorebtn">
           <Text className="k-explore-btn">Check Experiences</Text>
         </Button>
       </Col>

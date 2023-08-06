@@ -1,7 +1,11 @@
 import { Row, Col, Menu, Image, Typography, Button, Drawer, Space } from "antd";
 import logo from "../../images/logo.png";
 import { useState } from "react";
-import { MenuOutlined, PhoneOutlined } from "@ant-design/icons";
+import {
+  MenuOutlined,
+  PhoneOutlined,
+  WhatsAppOutlined,
+} from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
 const { Text } = Typography;
@@ -10,12 +14,12 @@ const items = [
   {
     label: "Home",
     key: "home",
-    link: "/"
+    link: "/",
   },
   {
     label: "Cabins",
     key: "cabin",
-    link: "/cabin"
+    link: "/cabin",
   },
   {
     label: "Adventures",
@@ -34,7 +38,7 @@ const AppHeader = () => {
   const [current, setCurrent] = useState("home");
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  const [placement, setPlacement] = useState('right');
+  const [placement, setPlacement] = useState("right");
   const showDrawer = () => {
     setOpen(true);
   };
@@ -49,15 +53,19 @@ const AppHeader = () => {
     // console.log("click ", e);
     setCurrent(e.key);
     // console.log(e.key, "e.key");
-    navigate(e.key)
+    navigate(e.key);
     setOpen(false);
-
   };
   return (
     <>
       <Row>
         <Col sm={5} md={0}>
-          <Button type="link" size="large" onClick={showDrawer} style={{ color: "#fff" }}>
+          <Button
+            type="link"
+            size="large"
+            onClick={showDrawer}
+            style={{ color: "#fff" }}
+          >
             <MenuOutlined />
           </Button>
         </Col>
@@ -65,17 +73,19 @@ const AppHeader = () => {
           <Image src={logo} width="90px" preview={false} />
         </Col>
         <Col sm={0} md={9} lg={5} hidden="sm">
-          <Image src={logo} width="90px" preview={false} />
-          <Text className="k-stay">Stay @ Kyathanamakki</Text>
+          <a href="/home">
+            <Image src={logo} width="90px" preview={false} />
+            <Text className="k-stay">Stay @ Kyathanamakki</Text>
+          </a>
         </Col>
-        <Col sm={0} md={15} lg={15} hidden="sm">
+        <Col sm={0} md={15} lg={14} hidden="sm">
           <Menu
             className="k-menu"
             style={{
               justifyContent: "flex-end",
               background: "#001529",
               color: "#ffffff",
-              border: "none"
+              border: "none",
             }}
             onClick={onClick}
             selectedKeys={[current]}
@@ -83,11 +93,22 @@ const AppHeader = () => {
             items={items}
           />
         </Col>
-        <Col md={0} lg={4} hidden="xs">
-          <a target="_blank" href="https://api.whatsapp.com/send?phone=9480679280" rel="noreferrer">
+        <Col md={0} lg={5} hidden="xs">
+          <a
+            style={{ marginRight: "10px" }}
+            target="_blank"
+            href="https://api.whatsapp.com/send?phone=9480679280"
+            rel="noreferrer"
+          >
+            <Button className="k-phone">
+              <WhatsAppOutlined className="k-phicon" />
+              9480679280
+            </Button>
+          </a>
+          <a href="tel:8073601059" rel="noreferrer">
             <Button className="k-phone">
               <PhoneOutlined className="k-phicon" />
-              9480679280 / 8073601059
+              8073601059
             </Button>
           </a>
         </Col>
@@ -98,14 +119,14 @@ const AppHeader = () => {
         width={280}
         onClose={onClose}
         open={open}
-      // extra={
-      //   <Space>
-      //     <Button onClick={onClose}>Cancel</Button>
-      //     <Button type="primary" onClick={onClose}>
-      //       OK
-      //     </Button>
-      //   </Space>
-      // }
+        // extra={
+        //   <Space>
+        //     <Button onClick={onClose}>Cancel</Button>
+        //     <Button type="primary" onClick={onClose}>
+        //       OK
+        //     </Button>
+        //   </Space>
+        // }
       >
         <Row gutter={12}>
           <Col xs={24}>
@@ -115,14 +136,24 @@ const AppHeader = () => {
               selectedKeys={[current]}
               items={items}
               theme="light"
-
             />
           </Col>
           <Col xs={24} style={{ marginTop: 20 }}>
-            <a target="_blank" href="https://api.whatsapp.com/send?phone=9480679280" rel="noreferrer">
+            <a
+              target="_blank"
+              href="https://api.whatsapp.com/send?phone=9480679280"
+              rel="noreferrer"
+            >
+              <Button className="k-phone" style={{ marginBottom: "10px" }}>
+                <WhatsAppOutlined className="k-phicon" />
+                9480679280
+              </Button>
+            </a>
+
+            <a href="tel:8073601059" rel="noreferrer">
               <Button className="k-phone">
                 <PhoneOutlined className="k-phicon" />
-                9480679280 / 8073601059
+                8073601059
               </Button>
             </a>
           </Col>
